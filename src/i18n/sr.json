@@ -1,6 +1,17 @@
 {
-  "app": { "name": "devbyvojin CRM" },
-  "common": { "loading": "Učitavanje…", "save": "Sačuvaj", "logout": "Odjava", "error": "Nešto nije u redu. Pokušaj ponovo." },
+  "app": {
+    "name": "devbyvojin CRM"
+  },
+  "common": {
+    "loading": "Učitavanje…",
+    "save": "Sačuvaj",
+    "logout": "Odjava",
+    "error": "Nešto nije u redu. Pokušaj ponovo.",
+    "delete": "Obriši",
+    "edit": "Izmeni",
+    "cancel": "Otkaži",
+    "noResults": "Nema rezultata"
+  },
   "auth": {
     "title": "Prijava",
     "signUpTitle": "Registracija",
@@ -25,13 +36,103 @@
     "nameRequired": "Unesi naziv"
   },
   "nav": {
-    "today": "Danas", "clients": "Klijenti", "leads": "Leadovi", "projects": "Projekti",
-    "invoices": "Fakture", "maintenance": "Održavanje", "outreach": "Outreach", "settings": "Podešavanja"
+    "today": "Danas",
+    "clients": "Klijenti",
+    "leads": "Leadovi",
+    "projects": "Projekti",
+    "invoices": "Fakture",
+    "maintenance": "Održavanje",
+    "outreach": "Outreach",
+    "settings": "Podešavanja",
+    "search": "Pretraga"
   },
   "today": {
     "title": "Danas",
     "emptyTitle": "Sve je čisto",
-    "emptyBody": "Ovde će se pojaviti follow-upovi, zadaci i kasne fakture čim ih dodaš (Faza 2)."
+    "emptyBody": "Nema follow-upova, zadataka ni kasnih faktura za danas. Dodaj lead sa datumom sledećeg koraka i pojaviće se ovde.",
+    "followUps": "Follow-up leadova",
+    "tasks": "Zadaci",
+    "overdueInvoices": "Kasne fakture",
+    "reminders": "Podsetnici",
+    "expiries": "Ističu u narednih 30 dana",
+    "waitingClient": "čeka klijenta",
+    "done": "Gotovo",
+    "expiry": {
+      "domain": "domen",
+      "ssl": "SSL",
+      "hosting": "hosting"
+    }
   },
-  "placeholder": { "soon": "Stiže u narednoj fazi." }
+  "placeholder": {
+    "soon": "Stiže u narednoj fazi."
+  },
+  "clients": {
+    "new": "Novi klijent",
+    "edit": "Izmeni klijenta",
+    "name": "Naziv firme",
+    "nameRequired": "Unesi naziv",
+    "country": "Država",
+    "language": "Jezik",
+    "currency": "Valuta",
+    "tags": "Tagovi (odvojeni zarezom)",
+    "source": "Izvor",
+    "notes": "Beleške",
+    "filter": "Filtriraj klijente…",
+    "confirmDelete": "Obrisati klijenta i sve njegove kontakte i aktivnosti?",
+    "emptyTitle": "Još nemaš klijenata",
+    "emptyBody": "Dodaj prvog klijenta pa mu beleži razgovore, kontakte i leadove."
+  },
+  "contacts": {
+    "title": "Kontakti",
+    "new": "Novi kontakt",
+    "edit": "Izmeni kontakt",
+    "fullName": "Ime i prezime",
+    "phone": "Telefon",
+    "role": "Uloga",
+    "privateNotes": "Lične beleške",
+    "empty": "Nema kontakata za ovog klijenta.",
+    "confirmDelete": "Obrisati kontakt?"
+  },
+  "activity": {
+    "note": "Beleška",
+    "call": "Poziv",
+    "email": "Mejl",
+    "meeting": "Sastanak",
+    "message": "Poruka"
+  },
+  "timeline": {
+    "title": "Vremenska linija",
+    "placeholder": "Šta se desilo? (⌘+Enter za čuvanje)",
+    "add": "Dodaj",
+    "empty": "Još nema aktivnosti."
+  },
+  "leads": {
+    "new": "Novi lead",
+    "edit": "Lead",
+    "title": "Naslov",
+    "titleRequired": "Unesi naslov",
+    "client": "Klijent",
+    "stage": "Faza",
+    "value": "Procenjena vrednost",
+    "source": "Izvor",
+    "nextStepAt": "Sledeći korak (datum)",
+    "nextStepNote": "Sledeći korak (šta)",
+    "lostReason": "Razlog gubitka",
+    "lostReasonRequired": "Razlog je obavezan za izgubljen lead",
+    "markLost": "Označi kao izgubljen",
+    "confirmDelete": "Obrisati lead?",
+    "emptyTitle": "Nema leadova",
+    "emptyBody": "Dodaj prvi lead i prevlači ga kroz faze dok ne postane projekat."
+  },
+  "search": {
+    "title": "Pretraga",
+    "placeholder": "Traži klijente, kontakte, leadove…",
+    "actions": "Akcije"
+  },
+  "quick": {
+    "title": "Brzi unos",
+    "note": "Beleška",
+    "lead": "Lead",
+    "type": "Tip"
+  }
 }

@@ -4,6 +4,10 @@ import { useAuth } from '@/features/auth/auth-context'
 import { LoginPage } from '@/features/auth/login-page'
 import { useMyOrganizations } from '@/features/onboarding/api'
 import { OnboardingPage } from '@/features/onboarding/onboarding-page'
+import { ClientDetailPage } from '@/features/clients/client-detail-page'
+import { ClientsPage } from '@/features/clients/clients-page'
+import { LeadsPage } from '@/features/leads/leads-page'
+import { OrgProvider } from '@/lib/org'
 import { PlaceholderPage } from '@/features/settings/placeholder-page'
 import { TodayPage } from '@/features/today/today-page'
 import { AppLayout } from './layout'
@@ -26,11 +30,13 @@ function Gate() {
   if (!first) return <OnboardingPage />
 
   return (
+    <OrgProvider org={{ id: first.id, name: first.name, currency: first.default_currency }}>
     <Routes>
       <Route element={<AppLayout orgName={first.name} />}>
         <Route index element={<TodayPage />} />
-        <Route path="clients" element={<PlaceholderPage titleKey="nav.clients" />} />
-        <Route path="leads" element={<PlaceholderPage titleKey="nav.leads" />} />
+        <Route path="clients" element={<ClientsPage />} />
+        <Route path="clients/:id" element={<ClientDetailPage />} />
+        <Route path="leads" element={<LeadsPage />} />
         <Route path="projects" element={<PlaceholderPage titleKey="nav.projects" />} />
         <Route path="invoices" element={<PlaceholderPage titleKey="nav.invoices" />} />
         <Route path="maintenance" element={<PlaceholderPage titleKey="nav.maintenance" />} />
@@ -39,6 +45,7 @@ function Gate() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
+    </OrgProvider>
   )
 }
 

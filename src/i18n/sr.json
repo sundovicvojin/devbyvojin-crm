@@ -1,0 +1,37 @@
+{
+  "app": { "name": "devbyvojin CRM" },
+  "common": { "loading": "Učitavanje…", "save": "Sačuvaj", "logout": "Odjava", "error": "Nešto nije u redu. Pokušaj ponovo." },
+  "auth": {
+    "title": "Prijava",
+    "signUpTitle": "Registracija",
+    "email": "Email",
+    "password": "Lozinka",
+    "signIn": "Prijavi se",
+    "signUp": "Napravi nalog",
+    "magicLink": "Pošalji magic link",
+    "magicLinkSent": "Proveri email — poslali smo ti link za prijavu.",
+    "checkEmailConfirm": "Proveri email da potvrdiš nalog, pa se prijavi.",
+    "noAccount": "Nemaš nalog?",
+    "haveAccount": "Već imaš nalog?",
+    "invalidEmail": "Unesi ispravan email",
+    "shortPassword": "Lozinka mora imati bar 8 karaktera"
+  },
+  "onboarding": {
+    "title": "Napravi svoju organizaciju",
+    "subtitle": "Ovo je prostor u kome držiš klijente, projekte i fakture.",
+    "name": "Naziv (npr. devbyvojin)",
+    "currency": "Podrazumevana valuta",
+    "create": "Napravi organizaciju",
+    "nameRequired": "Unesi naziv"
+  },
+  "nav": {
+    "today": "Danas", "clients": "Klijenti", "leads": "Leadovi", "projects": "Projekti",
+    "invoices": "Fakture", "maintenance": "Održavanje", "outreach": "Outreach", "settings": "Podešavanja"
+  },
+  "today": {
+    "title": "Danas",
+    "emptyTitle": "Sve je čisto",
+    "emptyBody": "Ovde će se pojaviti follow-upovi, zadaci i kasne fakture čim ih dodaš (Faza 2)."
+  },
+  "placeholder": { "soon": "Stiže u narednoj fazi." }
+}

@@ -134,5 +134,98 @@
     "note": "Beleška",
     "lead": "Lead",
     "type": "Tip"
+  },
+  "projects": {
+    "new": "Novi projekat",
+    "edit": "Izmeni projekat",
+    "name": "Naziv projekta",
+    "nameRequired": "Unesi naziv",
+    "clientRequired": "Izaberi klijenta",
+    "statusLabel": "Status",
+    "deadline": "Rok",
+    "value": "Vrednost",
+    "production": "Produkcija",
+    "template": "Šablon (unapred kreira zadatke)",
+    "noTemplate": "Bez šablona",
+    "confirmDelete": "Obrisati projekat sa svim zadacima, milestone-ovima i fajlovima?",
+    "emptyTitle": "Nema projekata",
+    "emptyBody": "Napravi projekat iz šablona (Real estate sajt, Mobilna aplikacija, Redizajn) i zadaci se kreiraju sami.",
+    "viewList": "Lista",
+    "viewBoard": "Tabla",
+    "viewCalendar": "Kalendar",
+    "status": {
+      "preparation": "Priprema",
+      "in_progress": "U radu",
+      "waiting_client": "Čeka klijenta",
+      "review": "Revizija",
+      "completed": "Završen",
+      "maintenance": "Održavanje"
+    }
+  },
+  "tasks": {
+    "title": "Zadaci",
+    "placeholder": "Novi zadatak (Enter)",
+    "subPlaceholder": "Podzadatak (Enter)",
+    "empty": "Nema zadataka. Dodaj prvi ispod.",
+    "addSub": "Dodaj podzadatak",
+    "waitingClient": "Čekam klijenta",
+    "openCount_one": "{{count}} otvoren",
+    "openCount_few": "{{count}} otvorena",
+    "openCount_other": "{{count}} otvorenih",
+    "waitingCount_one": "{{count}} čeka klijenta",
+    "waitingCount_few": "{{count}} čekaju klijenta",
+    "waitingCount_other": "{{count}} čeka klijenta",
+    "priority": {
+      "low": "Nizak",
+      "medium": "Srednji",
+      "high": "Visok",
+      "urgent": "Hitno"
+    }
+  },
+  "milestones": {
+    "title": "Milestone-ovi i plaćanja",
+    "new": "Novi milestone",
+    "edit": "Izmeni milestone",
+    "name": "Faza",
+    "dueDate": "Rok",
+    "amount": "Iznos",
+    "percent": "Procenat (%)",
+    "noDate": "bez roka",
+    "empty": "Nema milestone-ova (npr. Avans 30%, Isporuka 70%).",
+    "confirmDelete": "Obrisati milestone?",
+    "status": {
+      "planned": "Planiran",
+      "due": "Dospeo",
+      "invoiced": "Fakturisan",
+      "paid": "Plaćen"
+    }
+  },
+  "changeRequests": {
+    "title": "Izmene van dogovora",
+    "new": "Nova izmena",
+    "description": "Opis",
+    "descriptionRequired": "Unesi opis",
+    "price": "Cena",
+    "empty": "Nema zahteva za izmene.",
+    "approve": "Odobri",
+    "reject": "Odbij",
+    "status": {
+      "proposed": "Predlog",
+      "approved": "Odobren",
+      "rejected": "Odbijen"
+    }
+  },
+  "files": {
+    "title": "Fajlovi",
+    "upload": "Otpremi",
+    "uploading": "Otpremam…",
+    "empty": "Prevuci fajlove ovde ili klikni „Otpremi“.",
+    "open": "Otvori",
+    "confirmDelete": "Obrisati fajl?"
+  },
+  "calendar": {
+    "project": "Rok projekta",
+    "milestone": "Milestone",
+    "task": "Zadatak"
   }
 }

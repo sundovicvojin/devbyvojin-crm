@@ -9,6 +9,8 @@ export type ActivityType = 'note' | 'call' | 'email' | 'meeting' | 'message'
 export type ProjectStatus = 'preparation' | 'in_progress' | 'waiting_client' | 'review' | 'completed' | 'maintenance'
 export type TaskStatus = 'todo' | 'in_progress' | 'done'
 export type TaskPriority = 'low' | 'medium' | 'high' | 'urgent'
+export type MilestoneStatus = 'planned' | 'due' | 'invoiced' | 'paid'
+export type ChangeRequestStatus = 'proposed' | 'approved' | 'rejected'
 export type InvoiceStatus = 'draft' | 'sent' | 'paid' | 'overdue'
 
 type Meta = { id: string; created_at: string; updated_at: string; created_by: string | null }
@@ -124,9 +126,13 @@ export type Database = {
           deadline: string | null
           value: number
           currency: Currency
+          repo_url: string | null
+          figma_url: string | null
+          staging_url: string | null
+          production_url: string | null
           last_update_at: string
         },
-        'status' | 'deadline' | 'value' | 'currency' | 'last_update_at'
+        'status' | 'deadline' | 'value' | 'currency' | 'repo_url' | 'figma_url' | 'staging_url' | 'production_url' | 'last_update_at'
       >
       tasks: Tbl<
         Meta & {
@@ -139,8 +145,50 @@ export type Database = {
           priority: TaskPriority
           waiting_on_client: boolean
           completed_at: string | null
+          position: number
         },
-        'project_id' | 'parent_id' | 'due_date' | 'status' | 'priority' | 'waiting_on_client' | 'completed_at'
+        'project_id' | 'parent_id' | 'due_date' | 'status' | 'priority' | 'waiting_on_client' | 'completed_at' | 'position'
+      >
+      project_milestones: Tbl<
+        Meta & {
+          organization_id: string
+          project_id: string
+          name: string
+          due_date: string | null
+          amount: number | null
+          percent: number | null
+          status: MilestoneStatus
+          position: number
+        },
+        'due_date' | 'amount' | 'percent' | 'status' | 'position'
+      >
+      change_requests: Tbl<
+        Meta & {
+          organization_id: string
+          project_id: string
+          description: string
+          price: number
+          currency: Currency
+          status: ChangeRequestStatus
+        },
+        'price' | 'currency' | 'status'
+      >
+      project_templates: Tbl<Meta & { organization_id: string; name: string; description: string | null }, 'description'>
+      project_template_tasks: Tbl<
+        Meta & { organization_id: string; template_id: string; title: string; position: number; offset_days: number | null },
+        'position' | 'offset_days'
+      >
+      files: Tbl<
+        Meta & {
+          organization_id: string
+          project_id: string | null
+          client_id: string | null
+          storage_path: string
+          name: string
+          mime_type: string | null
+          size_bytes: number | null
+        },
+        'project_id' | 'client_id' | 'mime_type' | 'size_bytes'
       >
       invoices: Tbl<
         Meta & {
@@ -197,3 +245,14 @@ export type Stage = Rows['pipeline_stages']['Row']
 export type Lead = Rows['leads']['Row']
 export type LeadInsert = Rows['leads']['Insert']
 export type Activity = Rows['activities']['Row']
+export type Project = Rows['projects']['Row']
+export type ProjectInsert = Rows['projects']['Insert']
+export type Task = Rows['tasks']['Row']
+export type TaskInsert = Rows['tasks']['Insert']
+export type Milestone = Rows['project_milestones']['Row']
+export type MilestoneInsert = Rows['project_milestones']['Insert']
+export type ChangeRequest = Rows['change_requests']['Row']
+export type ChangeRequestInsert = Rows['change_requests']['Insert']
+export type ProjectTemplate = Rows['project_templates']['Row']
+export type TemplateTask = Rows['project_template_tasks']['Row']
+export type ProjectFile = Rows['files']['Row']

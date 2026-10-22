@@ -6,6 +6,8 @@ import { useMyOrganizations } from '@/features/onboarding/api'
 import { OnboardingPage } from '@/features/onboarding/onboarding-page'
 import { ClientDetailPage } from '@/features/clients/client-detail-page'
 import { ClientsPage } from '@/features/clients/clients-page'
+import { ProjectDetailPage } from '@/features/projects/project-detail-page'
+import { ProjectsPage } from '@/features/projects/projects-page'
 import { LeadsPage } from '@/features/leads/leads-page'
 import { OrgProvider } from '@/lib/org'
 import { PlaceholderPage } from '@/features/settings/placeholder-page'
@@ -37,7 +39,8 @@ function Gate() {
         <Route path="clients" element={<ClientsPage />} />
         <Route path="clients/:id" element={<ClientDetailPage />} />
         <Route path="leads" element={<LeadsPage />} />
-        <Route path="projects" element={<PlaceholderPage titleKey="nav.projects" />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="projects/:id" element={<ProjectDetailPage />} />
         <Route path="invoices" element={<PlaceholderPage titleKey="nav.invoices" />} />
         <Route path="maintenance" element={<PlaceholderPage titleKey="nav.maintenance" />} />
         <Route path="outreach" element={<PlaceholderPage titleKey="nav.outreach" />} />

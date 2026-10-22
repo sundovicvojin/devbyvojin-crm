@@ -25,7 +25,7 @@ Planirano: shadcn/ui komponente (pišu se ručno u `src/components/ui`), dnd-kit
 - Novac `numeric(12,2)` + valuta po redu. Statusi su Postgres enumi (osim pipeline faza koje su tabela).
 - Svi tekstovi kroz i18n (`src/i18n/sr.json`), ne hardkodovati stringove u komponentama.
 - Podaci kroz TanStack Query hookove u `features/*/api.ts`.
-- Faze rada: 1 temelj ✅ · 2 klijenti/leadovi/Danas ✅ · 3 projekti · 4 komunikacija · 5 ponude/fakture · 6 održavanje/outreach · 7 multi-user priprema.
+- Faze rada: 1 temelj ✅ · 2 klijenti/leadovi/Danas ✅ · 3 projekti ✅ · 4 komunikacija · 5 ponude/fakture · 6 održavanje/outreach · 7 multi-user priprema.
 
 ## Faza 2 beleške
 - Tipovi u `src/types/database.ts` su ručni dok se ne pokrene `gen:types`; kad dodaješ tabelu u upit, dodaj je i tamo.
@@ -33,3 +33,8 @@ Planirano: shadcn/ui komponente (pišu se ručno u `src/components/ui`), dnd-kit
 - Kanban: `features/leads/kanban.tsx` (dnd-kit); `leads.position` je double (srednja vrednost susednih). Prelazak u fazu tipa `lost` traži razlog.
 - Prečice: ⌘K pretraga, ⌘⇧A brzi unos (samo dok je prozor u fokusu; sistemska globalna prečica traži Tauri plugin + Rust).
 - Demo podaci: `supabase/seed_demo.sql` (promeni email, pokreni u SQL Editoru).
+
+## Faza 3 beleške
+- Migracija `20261023000001_phase3_storage_templates.sql`: bucket `files` (privatan, putanja `<org>/<project>/<uuid>-<ime>`), politike preko `can_access_file_path()`, `seed_default_templates()` (poziva se iz `create_organization`), trigger `touch_project` koji osvežava `projects.last_update_at`.
+- Projekat iz šablona: klijent kreira projekat pa unosi zadatke šablona (rok = danas + `offset_days`).
+- Prikazi projekata (lista/tabla/kalendar) u `features/projects`; izbor prikaza pamti se u localStorage.
